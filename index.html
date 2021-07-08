@@ -16,30 +16,21 @@
   ">
   <!-- <div id="grid"> -->
     <ol>
-      <li><a onclick = "
-        fetch('html').then(function(response){
-          response.text().then(function(text){
-            document.querySelector('article').innerHTML = text;
-          })
-        })
-        ">HTML</a></li>
-      <li><a onclick = "
-        fetch('css').then(function(response){
-          response.text().then(function(text){
-            document.querySelector('article').innerHTML = text;
-          })
-        })
-        ">CSS</a></li>
-      <li><a onclick = "
-        fetch('javascript').then(function(response){
-          response.text().then(function(text){
-            document.querySelector('article').innerHTML = text;
-          })
-        })
-        ">JabaScript</a></li>
+      <li><a onclick = "fetchPage('html')">HTML</a></li>
+      <li><a onclick = "fetchPage('css')">CSS</a></li>
+      <li><a onclick = "fetchPage('javascript')">JabaScript</a></li>
     </ol>
     <!-- <div id="article"> -->
       <article></article>
+      <script>
+        function fetchPage(name){
+          fetch(name).then(function(response){
+            response.text().then(function(text){
+              document.querySelector('article').innerHTML = text;
+            })
+          });
+        }
+      </script>
     <!-- </div> -->
   <!-- </div> -->
 </body>
